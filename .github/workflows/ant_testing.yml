@@ -1,6 +1,9 @@
 name: Java ant build
 
-on: [push]
+on:
+  push:
+    branches:
+      - GitHub_Action_Testing
 
 jobs:
   build:
