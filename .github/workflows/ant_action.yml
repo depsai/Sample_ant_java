@@ -1,4 +1,4 @@
-name: Java ant build
+name: Java build with ant
 
 on:
   push:
