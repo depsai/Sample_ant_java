@@ -24,6 +24,6 @@ jobs:
         password: admin_123
         format: maven2
         repository: maven-releases
-        coordinates: groupId=com.example artifactId=app version=1.0.0
+        coordinates: groupId=Nexus_action artifactId=Nexus_action version=1.0.0
         assets: extension=jar
         filename: ./build/jar/ant-sample.jar
