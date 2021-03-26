@@ -1,31 +1,29 @@
-name: Java ant build
+name: Java with Nexus Repository
 
-on:
-  pull_request:
-    branches:
-      - workflow_test
+on: [push]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Step 1 - Checkout main branch from Github
-        uses: actions/checkout@v2
-      
-      - name: Step 2 - Set up JDK 1.8
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
-          
-      - name: Step 3 - Build with Ant Project
-        run: |
+    - uses: actions/checkout@v1
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Step 3 - Build with Ant Project
+      run: |
           ant -noinput -buildfile build.xml
-          mkdir staging && cp build/jar/*.jar staging
-        
-      - name: Step 4 - Persist workflow data as artifacts
-        uses: actions/upload-artifact@v2
-        with:
-         name: github-actions-artifact
-         path: staging
+    - name: Nexus Repo Publish
+      uses: sonatype-nexus-community/nexus-repo-github-action@master
+      with:
+        serverUrl: http://localhost:8081/
+        username: admin
+        password: admin_123
+        format: maven2
+        repository: maven-releases
+        coordinates: groupId=com.example artifactId=app version=1.0.0
+        assets: extension=jar
+        filename: ./build/jar/sample-ant-java.jar
