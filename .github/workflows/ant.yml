@@ -15,6 +15,8 @@ jobs:
         java-version: 1.8
     - name: Step 2 - Download zip file to ear directory
       run: |
+          env | grep -i proxy
+          unset http_proxy
           wget http://localhost:8082/repository/maven-releases/Nexus_zip/Nexus_zip/1.0.1/Nexus_zip-1.0.1.zip
           mkdir ear
           ls -a
