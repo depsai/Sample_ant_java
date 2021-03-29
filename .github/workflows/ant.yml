@@ -16,6 +16,7 @@ jobs:
     - name: Step 2 - Download zip file to ear directory
       run: |
           wget https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip
+          ls -a
 
     - name: Step 3 - Build with Ant Project
       run: |
