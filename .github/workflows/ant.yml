@@ -15,8 +15,8 @@ jobs:
         java-version: 1.8
     - name: Step 2 - Download zip file to ear directory
       run: |
-          wget http://[::1]:8082/repository/maven-releases/Nexus_zip/Nexus_zip/1.0.1/Nexus_zip-1.0.1.zip
-          ls -a
+          curl http://localhost:8082/repository/maven-releases/Nexus_zip/Nexus_zip/1.0.1/Nexus_zip-1.0.1.zip
+
     - name: Step 3 - Build with Ant Project
       run: |
           ant -noinput -buildfile build.xml
