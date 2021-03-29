@@ -13,17 +13,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Step 2 - Download zip file to ear directory
+      run: |
+          mkdir ear
+          wget http://localhost:8082/repository/maven-releases/Nexus_zip/Nexus_zip/1.0.1/Nexus_zip-1.0.1.zip -O /ear/Nexus_zip-1.0.1.zip
     - name: Step 3 - Build with Ant Project
       run: |
           ant -noinput -buildfile build.xml
-    - name: Nexus Repo Publish
-      uses: sonatype-nexus-community/nexus-repo-github-action@master
-      with:
-        serverUrl: http://localhost:8082/
-        username: admin
-        password: admin_123
-        format: maven2
-        repository: maven-releases
-        coordinates: groupId=Nexus_action artifactId=Nexus_action version=1.0.0
-        assets: extension=jar
-        filename: ./build/jar/ant-sample.jar
+   
