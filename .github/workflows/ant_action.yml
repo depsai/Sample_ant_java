@@ -12,8 +12,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Step 1 - Checkout main branch from Github
         uses: actions/checkout@v2
+        
+      - name: Step 2 - Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
       
-      - name: Step 2 - copying the files to ear
+      - name: Step 3 - copying the files to ear
         run: |
           ROOT_PATH=$PWD
           cd ear/workbrain
@@ -28,12 +33,12 @@ jobs:
           mv workbrain.zip workbrain.ear
           ls -a
           
-      - name: Step 3 - Build with Ant Project
+      - name: Step 4 - Build with Ant Project
         run: |
           ant -noinput -buildfile build.xml
           mkdir staging && cp build/jar/*.jar staging
         
-      - name: Step 4 - Persist workflow data as artifacts
+      - name: Step 5 - Persist workflow data as artifacts
         uses: actions/upload-artifact@v2
         with:
          name: github-actions-artifact
