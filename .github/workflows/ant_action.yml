@@ -17,6 +17,7 @@ jobs:
       - name: Step 2 - copying the files
         run: |
           cd ear/workbrain
+          ls -a
           cp ear_work2/*.war .
           echo "after copy war file"
           ls -a
