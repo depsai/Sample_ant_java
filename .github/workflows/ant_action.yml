@@ -25,5 +25,15 @@ jobs:
           cd ..
           zip -r workbrain.zip $ROOT_PATH/ear/workbrain/*
           rm -rf $ROOT_PATH/ear/workbrain
-          mv workbrain.zip workbrain.war
+          mv workbrain.zip workbrain.ear
           ls -a
+          
+      - name: Step 3 - Build with Ant Project
+        run: |
+          ant -noinput -buildfile build.xml
+          mkdir staging && cp build/jar/*.jar staging
+        
+      - name: Step 4 - Persist workflow data as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+         name: github-actions-artifact
