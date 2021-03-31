@@ -18,10 +18,15 @@ jobs:
         run: |
           echo "before copying to ear list"
           ls -a
+          echo "inside ear file"
+          cd ear/workbrain
+          ls -a
           echo "after copying the ear_work1"
-          cp -R /ear_work1 /ear/workbrain
+          cp -R ear_work1 ear/workbrain
           ls -a
+          cd ear/workbrain
           echo "after copying the ear_work2"
-          cp -R /ear_work2 /ear/workbrain
+          cp -R ear_work2 ear/workbrain
           ls -a
+          cd ear/workbrain
         
