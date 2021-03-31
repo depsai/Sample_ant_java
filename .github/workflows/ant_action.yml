@@ -16,8 +16,9 @@ jobs:
       
       - name: Step 2 - copying the files
         run: |
+          ROOT_PATH=pwd
           cd ear/workbrain
           ls -a
-          cp /home/runner/work/Sample_ant_java/Sample_ant_java/ear_work2/*.war .
+          cp $ROOT_PATH/ear_work2/*.war .
           echo "after copy war file"
           ls -a
