@@ -15,4 +15,8 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Step 2 - copying the files
-        run: pwd && whoami && ls -l
+        run: |
+          cd ear/workbrain
+          cp ear_work2/*.war .
+          echo "after copy war file"
+          ls -a
