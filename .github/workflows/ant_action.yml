@@ -22,4 +22,7 @@ jobs:
           cp $ROOT_PATH/ear_work2/*.war .
           echo "after copy war file and jarfile"
           cp -R $ROOT_PATH/ear_work1/* .
+          rm testdelete.txt
+          ls -a
+          zip -r workbrain.zip *
           ls -a
