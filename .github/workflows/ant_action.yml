@@ -16,7 +16,7 @@ jobs:
       
       - name: Step 2 - copying the files
         run: |
-          ROOT_PATH = $pwd
+          ROOT_PATH = $(pwd)
           cd ear/workbrain
           ls -a
           cp $ROOT_PATH/ear_work2/*.war .
