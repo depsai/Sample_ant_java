@@ -1,5 +1,4 @@
 name: Java build with ant
-
 on:
   push:
     branches:
@@ -14,7 +13,7 @@ jobs:
       - name: Step 1 - Checkout main branch from Github
         uses: actions/checkout@v2
       
-      - name: Step 2 - copying the files
+      - name: Step 2 - copying the files to ear
         run: |
           ROOT_PATH=$PWD
           cd ear/workbrain
@@ -23,8 +22,8 @@ jobs:
           echo "after copy war file and jarfile"
           cp -R $ROOT_PATH/ear_work1/* .
           rm testdelete.txt
-          ls -a
           cd ..
           zip -r workbrain.zip $ROOT_PATH/ear/workbrain/*
           rm -rf $ROOT_PATH/ear/workbrain
+          mv workbrain.zip workbrain.war
           ls -a
