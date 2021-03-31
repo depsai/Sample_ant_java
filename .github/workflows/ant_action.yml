@@ -17,16 +17,11 @@ jobs:
       - name: Step 2 - copying the files
         run: |
           echo "before copying to ear list"
-          ls -a
+          ls -ltr
           echo "inside ear file"
           cd ear/workbrain
-          ls -a
+          ls -ltr
           echo "after copying the ear_work1"
-          cp -R ./ear_work1 ./ear/workbrain/
-          ls -a
+          cp ear_work2/*.war ear/workbrain/
           cd ear/workbrain
-          echo "after copying the ear_work2"
-          cp -R ./ear_work2 ./ear/workbrain/
-          ls -a
-          cd ear/workbrain
-        
+          ls-ltr
