@@ -18,6 +18,6 @@ jobs:
         run: |
           cd ear/workbrain
           ls -a
-          cp ear_work2/*.war .
+          cp /home/runner/work/Sample_ant_java/Sample_ant_java/ear_work2/*.war .
           echo "after copy war file"
           ls -a
