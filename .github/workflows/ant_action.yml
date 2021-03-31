@@ -24,5 +24,6 @@ jobs:
           cp -R $ROOT_PATH/ear_work1/* .
           rm testdelete.txt
           ls -a
-          zip -r workbrain.zip *
+          cd ..
+          zip -r workbrain.zip $ROOT_PATH/ear/workbrain/*
           ls -a
