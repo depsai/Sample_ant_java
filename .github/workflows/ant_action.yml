@@ -22,13 +22,15 @@ jobs:
         run: |
           ROOT_PATH=$PWD
           cd ear/workbrain
-          ls -a
+          ls -ltr
           cp $ROOT_PATH/ear_work2/*.war .
           echo "after copy war file and jarfile"
           cp -R $ROOT_PATH/ear_work1/* .
           rm testdelete.txt
           cd ..
-          zip -r workbrain.zip $ROOT_PATH/ear/workbrain/*
+          ls-ltr
+          cd $ROOT_PATH/ear
+          zip -r workbrain.zip workbrain/*
           rm -rf $ROOT_PATH/ear/workbrain
           echo "ear dir list"
           ls -ltr
