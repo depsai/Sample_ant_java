@@ -30,7 +30,6 @@ jobs:
           cd ..
           zip -r workbrain.zip $ROOT_PATH/ear/workbrain/*
           mkdir unzip
-          unzip -d ear/unzip workbrain.zip
-          ls -a
           cd $ROOT_PATH/ear/unzip
+          unzip workbrain.zip
           ls -a
