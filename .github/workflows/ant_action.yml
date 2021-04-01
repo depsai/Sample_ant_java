@@ -32,5 +32,5 @@ jobs:
           rm -rf $ROOT_PATH/ear/workbrain
           echo "ear dir list"
           ls -ltr
-          mkdir unzip && unzip -d /ear/unzip $ROOT_PATH/ear/workbrain.zip
-          ls -a
+          mkdir unzip && unzip -d $ROOT_PATH/ear/unzip $ROOT_PATH/ear/workbrain.zip
+          ls -ltr
