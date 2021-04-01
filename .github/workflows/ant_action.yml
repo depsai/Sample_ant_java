@@ -28,10 +28,9 @@ jobs:
           cp -R $ROOT_PATH/ear_work1/* .
           rm testdelete.txt
           cd ..
-          ls-ltr
           cd $ROOT_PATH/ear
+          ls -ltr
           zip -r workbrain.zip workbrain/*
-          rm -rf $ROOT_PATH/ear/workbrain
           echo "ear dir list"
           ls -ltr
           mkdir unzip && unzip -d $ROOT_PATH/ear/unzip $ROOT_PATH/ear/workbrain.zip
