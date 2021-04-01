@@ -33,5 +33,8 @@ jobs:
           zip -r workbrain.zip workbrain/*
           echo "ear dir list"
           ls -ltr
-          mkdir unzip && unzip -d $ROOT_PATH/ear/unzip $ROOT_PATH/ear/workbrain.zip
+          mkdir unzip
+          cd unzip
+          unzip $ROOT_PATH/ear/workbrain.zip
+          echo "after unzip listing"
           ls -ltr
