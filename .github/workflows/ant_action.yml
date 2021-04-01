@@ -29,7 +29,10 @@ jobs:
           rm testdelete.txt
           cd ..
           zip -r workbrain.zip $ROOT_PATH/ear/workbrain/*
+          echo "ear dir list"
+          ls -a
           mkdir unzip
           cd $ROOT_PATH/ear/unzip
+          echo $ROOT_PATH/ear/unzip
           unzip $ROOT_PATH/ear/workbrain.zip
           ls -a
