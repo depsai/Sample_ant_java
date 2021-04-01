@@ -38,3 +38,5 @@ jobs:
           unzip $ROOT_PATH/ear/workbrain.zip
           echo "after unzip listing"
           ls -ltr
+          cd workbrain
+          ls -ltr
